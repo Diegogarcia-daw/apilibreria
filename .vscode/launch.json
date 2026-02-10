@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EstudiolibreriaApplication<estudiolibreria>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "edu.spring.estudiolibreria.EstudiolibreriaApplication",
+            "projectName": "estudiolibreria",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
