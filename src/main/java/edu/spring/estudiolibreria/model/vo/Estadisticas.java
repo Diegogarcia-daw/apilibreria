@@ -2,6 +2,9 @@ package edu.spring.estudiolibreria.model.vo;
 
 import java.util.Date;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class Estadisticas {
 
     private Integer vecesPrestado;

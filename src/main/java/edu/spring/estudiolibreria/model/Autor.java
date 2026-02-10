@@ -1,10 +1,13 @@
 package edu.spring.estudiolibreria.model;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -21,12 +24,17 @@ public class Autor {
     @Column(name = "biografia", nullable = false)
     private String biografia;
 
-    
-    public Autor(Integer id, String nombre, String nacionalidad, String biografia) {
+
+    @OneToMany(mappedBy = "autor")
+    private Set<Libro> libros;
+
+
+    public Autor(Integer id, String nombre, String nacionalidad, String biografia, Set<Libro> libros) {
         this.id = id;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
-        this.biografia = biografia;
+        this.biografia = biografia; 
+        this.libros = libros;
     }
 
 

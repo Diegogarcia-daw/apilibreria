@@ -1,6 +1,10 @@
 package edu.spring.estudiolibreria.model.vo;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class DetallesFisicos {
+    
     private Integer numeroPaginas;
     private Integer peso;
     private Integer dimensiones;

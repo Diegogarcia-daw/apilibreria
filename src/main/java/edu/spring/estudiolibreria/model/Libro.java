@@ -12,6 +12,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
@@ -26,7 +28,7 @@ public class Libro {
     private Integer id;
     @Column(name = "titulo", nullable = false)
     private String titulo;
-    @Column(name = "anopublicacion", nullable = false)
+    @Column(name = "isbn", nullable = false)
     private String ISBN;
     @Column(name = "anopublicacion", nullable = false)
     private Integer anopublicacion;
@@ -46,13 +48,16 @@ public class Libro {
     })
     private Estadisticas estadisticas;
 
+    @ManyToOne
+    private Autor autor;
+
 
 
     public Libro() {
     }
 
     public Libro(Integer id, String titulo, String ISBN, Integer anopublicacion, Estado estado,
-            DetallesFisicos detallesFisicos, Estadisticas estadisticas) {
+            DetallesFisicos detallesFisicos, Estadisticas estadisticas, Autor autor) {
         this.id = id;
         this.titulo = titulo;
         this.ISBN = ISBN;
@@ -60,6 +65,7 @@ public class Libro {
         this.estado = estado;
         this.detallesFisicos = detallesFisicos;
         this.estadisticas = estadisticas;
+        this.autor = autor;
     }
 
     public Integer getId() {
