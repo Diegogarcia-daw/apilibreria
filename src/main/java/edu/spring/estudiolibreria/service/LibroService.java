@@ -1,5 +1,6 @@
 package edu.spring.estudiolibreria.service;
 
+import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,6 +10,7 @@ import edu.spring.estudiolibreria.model.Enum.Estado;
 import edu.spring.estudiolibreria.repository.LibroRepository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class LibroService {
@@ -57,6 +59,12 @@ public class LibroService {
         libro.setEstado(Estado.INACTIVO);
 
         libroRepository.save(libro);
+    }
+
+
+    @Transactional
+    public List<Libro> obtenerTodos() {
+        return libroRepository.findAll();
     }
 
 }
