@@ -1,5 +1,6 @@
 package edu.spring.estudiolibreria.model.vo;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import jakarta.persistence.Embeddable;
@@ -24,5 +25,15 @@ public class Estadisticas {
 
     public Date getUltimaFecha() {
         return ultimaFecha;
+    }
+
+    public void setVecesPrestado(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setVecesPrestado'");
+    }
+
+    public void setUltimaFecha(LocalDateTime now) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setUltimaFecha'");
     }
 }
